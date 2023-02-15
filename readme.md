@@ -1,227 +1,10 @@
-# 2-4
-bash test_sthv2.sh \
-bash scripts/2-4/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/2-4/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4a.sh
-
-# 2-2
-bash scripts/1-26/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/1-26/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4a.sh
-
-# 12-27
-bash test_sthv2.sh
-
-bash scripts/12-26/exempler/5/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-26/exempler/5/8gpus_sthv2_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-26/exempler/5/8gpus_sthv2_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/12-26/exempler/5/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/12-26/exempler/5/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/12-26/exempler/5/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh \
-bash scripts/12-26/exempler/10/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-26/exempler/10/8gpus_sthv2_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-26/exempler/10/8gpus_sthv2_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/12-26/exempler/10/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/12-26/exempler/10/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/12-26/exempler/10/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh \
-bash scripts/12-26/lr/5/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-26/lr/5/8gpus_sthv2_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-26/lr/5/8gpus_sthv2_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/12-26/lr/5/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/12-26/lr/5/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/12-26/lr/5/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh \
-bash scripts/12-26/lr/10/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-26/lr/10/8gpus_sthv2_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-26/lr/10/8gpus_sthv2_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/12-26/lr/10/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/12-26/lr/10/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/12-26/lr/10/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh \
-bash scripts/12-26/lr5e-4/5/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-26/lr5e-4/5/8gpus_sthv2_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-26/lr5e-4/5/8gpus_sthv2_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/12-26/lr5e-4/5/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/12-26/lr5e-4/5/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/12-26/lr5e-4/5/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh \
-bash scripts/12-26/lr5e-4/10/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-26/lr5e-4/10/8gpus_sthv2_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-26/lr5e-4/10/8gpus_sthv2_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/12-26/lr5e-4/10/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/12-26/lr5e-4/10/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/12-26/lr5e-4/10/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh \
-bash scripts/12-26/weight/5/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-26/weight/5/8gpus_sthv2_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-26/weight/5/8gpus_sthv2_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/12-26/weight/5/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/12-26/weight/5/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/12-26/weight/5/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh \
-bash scripts/12-26/weight/10/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-26/weight/10/8gpus_sthv2_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-26/weight/10/8gpus_sthv2_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/12-26/weight/10/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/12-26/weight/10/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/12-26/weight/10/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh
-# 12-09
-### 测试脚本
-bash test_ucf2.sh \
-bash test_hmdb.sh \
-bash test_ucf.sh
-
-#### HMDB(第一批)
-bash scripts/12-8/hmdb1/1/8gpus_hmdb_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-8/hmdb1/1/8gpus_hmdb_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-8/hmdb1/1/8gpus_hmdb_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/12-8/hmdb1/5/8gpus_hmdb_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-8/hmdb1/5/8gpus_hmdb_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-8/hmdb1/5/8gpus_hmdb_1e-3_bsz88_hs100_2021_hslr1e-4.sh
-
-#### HMDB(第二批---去除最后层importance)
-bash scripts/12-8/hmdb2_unuse_importance/1/8gpus_hmdb_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-8/hmdb2_unuse_importance/1/8gpus_hmdb_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-8/hmdb2_unuse_importance/1/8gpus_hmdb_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/12-8/hmdb2_unuse_importance/5/8gpus_hmdb_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-8/hmdb2_unuse_importance/5/8gpus_hmdb_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-8/hmdb2_unuse_importance/5/8gpus_hmdb_1e-3_bsz88_hs100_2021_hslr1e-4.sh
-
-#### sthv(第一批)
-bash scripts/12-8/sthv1/5/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/12-8/sthv1/5/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/12-8/sthv1/5/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh \
-bash scripts/12-8/sthv1/10/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/12-8/sthv1/10/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/12-8/sthv1/10/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh \
-bash scripts/12-8/sthv1/5/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-8/sthv1/5/8gpus_sthv2_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-8/sthv1/5/8gpus_sthv2_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/12-8/sthv1/10/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-8/sthv1/10/8gpus_sthv2_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-8/sthv1/10/8gpus_sthv2_1e-3_bsz88_hs100_2021_hslr1e-4.sh 
-
-#### sthv(第二批--去除最后层importance)
-bash scripts/12-8/sthv2_unuse_importance/5/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/12-8/sthv2_unuse_importance/5/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/12-8/sthv2_unuse_importance/5/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh \
-
-bash scripts/12-8/sthv2_unuse_importance/10/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/12-8/sthv2_unuse_importance/10/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/12-8/sthv2_unuse_importance/10/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh \
-
-bash scripts/12-8/sthv2_unuse_importance/10/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/12-8/sthv2_unuse_importance/10/8gpus_sthv2_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-8/sthv2_unuse_importance/10/8gpus_sthv2_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-
-bash scripts/12-8/sthv2_unuse_importance/5/8gpus_sthv2_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/12-8/sthv2_unuse_importance/5/8gpus_sthv2_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/12-8/sthv2_unuse_importance/5/8gpus_sthv2_1e-3_bsz88_hs100_1000_hslr1e-4.sh
-
-#### ucf(第一批)
-bash scripts/12-8/ucf1/2/8gpus_ucf_1e-3_bsz48_hs100_1000_nb2_hslr1e-4.sh \
-bash scripts/12-8/ucf1/2/8gpus_ucf_1e-3_bsz48_hs100_1993_nb2_hslr1e-4.sh \
-bash scripts/12-8/ucf1/2/8gpus_ucf_1e-3_bsz48_hs100_2021_nb2_hslr1e-4.sh \
-bash scripts/12-8/ucf1/5/8gpus_ucf_1e-3_bsz48_hs100_1000_nb5_hslr1e-4.sh \
-bash scripts/12-8/ucf1/5/8gpus_ucf_1e-3_bsz48_hs100_1993_nb5_hslr1e-4.sh \
-bash scripts/12-8/ucf1/5/8gpus_ucf_1e-3_bsz48_hs100_2021_nb5_hslr1e-4.sh \
-bash scripts/12-8/ucf1/10/8gpus_ucf_1e-3_bsz48_hs100_1000_nb10_hslr1e-4.sh \
-bash scripts/12-8/ucf1/10/8gpus_ucf_1e-3_bsz48_hs100_1993_nb10_hslr1e-4.sh \
-bash scripts/12-8/ucf1/10/8gpus_ucf_1e-3_bsz48_hs100_2021_nb10_hslr1e-4.sh
-
-#### ucf(第二批)
-bash scripts/12-8/ucf2_unuse_importance/2/8gpus_ucf_1e-3_bsz48_hs100_1000_nb2_hslr1e-4.sh \
-bash scripts/12-8/ucf2_unuse_importance/2/8gpus_ucf_1e-3_bsz48_hs100_1993_nb2_hslr1e-4.sh \
-bash scripts/12-8/ucf2_unuse_importance/2/8gpus_ucf_1e-3_bsz48_hs100_2021_nb2_hslr1e-4.sh \
-bash scripts/12-8/ucf2_unuse_importance/5/8gpus_ucf_1e-3_bsz48_hs100_1000_nb5_hslr1e-4.sh \
-bash scripts/12-8/ucf2_unuse_importance/5/8gpus_ucf_1e-3_bsz48_hs100_1993_nb5_hslr1e-4.sh \
-bash scripts/12-8/ucf2_unuse_importance/5/8gpus_ucf_1e-3_bsz48_hs100_2021_nb5_hslr1e-4.sh \ 
-bash scripts/12-8/ucf2_unuse_importance/10/8gpus_ucf_1e-3_bsz48_hs100_1000_nb10_hslr1e-4.sh \
-bash scripts/12-8/ucf2_unuse_importance/10/8gpus_ucf_1e-3_bsz48_hs100_1993_nb10_hslr1e-4.sh \
-bash scripts/12-8/ucf2_unuse_importance/10/8gpus_ucf_1e-3_bsz48_hs100_2021_nb10_hslr1e-4.sh
-
-
-
-# 11-28 
-### 测试脚本（三个脚本跑通两个age即可kill）
-bash test_ucf.sh \
-bash test_sthv2.sh \
-bash test_hmdb.sh
-
-
- #### HMDB任务（第一批）
-bash scripts/11-28/hmdb/8gpus_hmdb_1e-3_bsz88_hs100_1000_hslr1e-2.sh \
-bash scripts/11-28/hmdb/8gpus_hmdb_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/11-28/hmdb/8gpus_hmdb_1e-3_bsz88_hs100_1000_nb5_hslr1e-2.sh \
-bash scripts/11-28/hmdb/8gpus_hmdb_1e-3_bsz88_hs100_1993_hslr1e-2.sh \
-bash scripts/11-28/hmdb/8gpus_hmdb_1e-3_bsz88_hs100_1000_nb5_hslr1e-4.sh \
-bash scripts/11-28/hmdb/8gpus_hmdb_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/11-28/hmdb/8gpus_hmdb_1e-3_bsz88_hs100_1993_nb5_hslr1e-4.sh \
-bash scripts/11-28/hmdb/8gpus_hmdb_1e-3_bsz88_hs100_1993_nb5_hslr1e-2.sh \
-bash scripts/11-28/hmdb/8gpus_hmdb_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/11-28/hmdb/8gpus_hmdb_1e-3_bsz88_hs100_2021_hslr1e-2.sh \
-bash scripts/11-28/hmdb/8gpus_hmdb_1e-3_bsz88_hs100_2021_nb5_hslr1e-2.sh \
-bash scripts/11-28/hmdb/8gpus_hmdb_1e-3_bsz88_hs100_2021_nb5_hslr1e-4.sh
-
-#### HMDB任务（第二批）
-bash scripts/11-28/hmdb2/8gpus_hmdb_1e-3_bsz88_hs100_1000_hslr1e-2.sh \
-bash scripts/11-28/hmdb2/8gpus_hmdb_1e-3_bsz88_hs100_1000_hslr1e-4.sh \
-bash scripts/11-28/hmdb2/8gpus_hmdb_1e-3_bsz88_hs100_1000_nb5_hslr1e-2.sh \
-bash scripts/11-28/hmdb2/8gpus_hmdb_1e-3_bsz88_hs100_1000_nb5_hslr1e-4.sh \
-bash scripts/11-28/hmdb2/8gpus_hmdb_1e-3_bsz88_hs100_1993_hslr1e-2.sh \
-bash scripts/11-28/hmdb2/8gpus_hmdb_1e-3_bsz88_hs100_1993_hslr1e-4.sh \
-bash scripts/11-28/hmdb2/8gpus_hmdb_1e-3_bsz88_hs100_1993_nb5_hslr1e-2.sh \
-bash scripts/11-28/hmdb2/8gpus_hmdb_1e-3_bsz88_hs100_1993_nb5_hslr1e-4.sh \
-bash scripts/11-28/hmdb2/8gpus_hmdb_1e-3_bsz88_hs100_2021_hslr1e-2.sh \
-bash scripts/11-28/hmdb2/8gpus_hmdb_1e-3_bsz88_hs100_2021_hslr1e-4.sh \
-bash scripts/11-28/hmdb2/8gpus_hmdb_1e-3_bsz88_hs100_2021_nb5_hslr1e-2.sh \
-bash scripts/11-28/hmdb2/8gpus_hmdb_1e-3_bsz88_hs100_2021_nb5_hslr1e-4.sh
-
-#### sthv2任务（第一批）
-bash scripts/11-28/sthv2/8gpus_sthv2_1e-3_bsz88_hs100_1000_lambda.sh \
-bash scripts/11-28/sthv2/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/11-28/sthv2/8gpus_sthv2_1e-3_bsz88_hs100_1993_lambda.sh \
-bash scripts/11-28/sthv2/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/11-28/sthv2/8gpus_sthv2_1e-3_bsz88_hs100_2021_lambda.sh \
-bash scripts/11-28/sthv2/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh
-
-#### sthv2任务（第二批）
-bash scripts/11-28/sthv2_2_nb10/8gpus_sthv2_1e-3_bsz88_hs100_1000_lambda.sh \
-bash scripts/11-28/sthv2_2_nb10/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/11-28/sthv2_2_nb10/8gpus_sthv2_1e-3_bsz88_hs100_1993_lambda.sh \
-bash scripts/11-28/sthv2_2_nb10/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/11-28/sthv2_2_nb10/8gpus_sthv2_1e-3_bsz88_hs100_2021_lambda.sh \
-bash scripts/11-28/sthv2_2_nb10/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh
-
-#### ucf任务（第一批）
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_1000_nb2_hslr1e-2.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_1000_nb2_hslr1e-4.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_1000_nb2.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_1000_nb5.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_1000_nb10.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_1993_nb2_hslr1e-2.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_1993_nb2_hslr1e-4.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_1993_nb2.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_1993_nb5.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_1993_nb10.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_2021_nb2_hslr1e-2.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_2021_nb2_hslr1e-4.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_2021_nb2.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_2021_nb5.sh \
-bash scripts/11-28/ucf/8gpus_ucf_1e-3_bsz48_hs100_2021_nb10.sh
-
-#### ucf任务（第二批）
-bash scripts/11-28/ucf2/8gpus_ucf_1e-3_bsz48_hs100_1000_nb2.sh \
-bash scripts/11-28/ucf2/8gpus_ucf_1e-3_bsz48_hs100_1993_nb2.sh \
-bash scripts/11-28/ucf2/8gpus_ucf_1e-3_bsz48_hs100_2021_nb2.sh
-
-#### ucf任务（第三批）
-bash scripts/11-28/ucf3/8gpus_ucf_1e-3_bsz48_hs100_1000_nb5_hslr1e-2.sh \
-bash scripts/11-28/ucf3/8gpus_ucf_1e-3_bsz48_hs100_1000_nb5_hslr1e-4.sh \
-bash scripts/11-28/ucf3/8gpus_ucf_1e-3_bsz48_hs100_1993_nb5_hslr1e-4.sh \
-bash scripts/11-28/ucf3/8gpus_ucf_1e-3_bsz48_hs100_1993_nb5_hslr1e-2.sh \
-bash scripts/11-28/ucf3/8gpus_ucf_1e-3_bsz48_hs100_2021_nb5_hslr1e-2.sh \
-bash scripts/11-28/ucf3/8gpus_ucf_1e-3_bsz48_hs100_2021_nb5_hslr1e-4.sh
-
 # 一、数据下载和处理（HMDB51）
 ## 1、下载mmaction2
-利用github开源库下载和处理数据（下载位置不限）
+下面的链接是处理数据的开源仓库，利用该开源库下载和处理数据（将这个仓库放在数据存储的目录下，下载和处理的数据会生成在这个仓库的某文件夹下）
 仓库链接：https://github.com/open-mmlab/mmaction2
 ## 2、下载数据集
-进入 MMACTION2/tools/data/hmdb51/ 文件夹
+下载上述仓库后，解压缩生成MMACTION2文件夹
+进入 MMACTION2/tools/data/hmdb51/ 文件夹，并打开终端
 运行如下命令：
 (1) 准备注释
 ```
@@ -241,7 +24,7 @@ bash extract_rgb_frames_opencv.sh
 bash generate_videos_filelist.sh
 bash generate_rawframes_filelist.sh
 ```
-## 5、文件目录如下
+## 5、文件目录如下（最终的生成目录如下，mmaction2\data文件夹下就是数据）
 ```
 mmaction2
 ├── mmaction
@@ -276,7 +59,8 @@ mmaction2
 │   │   │   │   ├── winKen_wave_u_cm_np1_ri_bad_1
 ```
 ## 6、修改代码中数据的路径
-把步骤5的hmdb51的上一层data路径添加到TCD项目的dataset_config.py文件的ROOT_DATASET变量上即可
+(1) 下载incrementvideo-git项目
+把步骤5的hmdb51的上一层data路径添加到incrementvideo-git\ops\dataset_config.py文件的ROOT_DATASET变量上即可
 
 # 二、数据下载和处理（Something-SomethingV2）
 ## 1、下载mmaction2
@@ -335,7 +119,7 @@ mmaction2
 
 ```
 ## 6、修改代码中数据的路径
-把步骤5的sthv2的上一层data路径添加到TCD项目的dataset_config.py文件的ROOT_DATASET变量上即可
+把步骤5的hmdb51的上一层data路径添加到incrementvideo-git\ops\dataset_config.py文件的ROOT_DATASET变量上即可
 
 # 训练注意事项
 #### 1、batchsize调节
@@ -408,97 +192,4 @@ mmaction2
 
 ```
 ## 6、修改代码中数据的路径
-把步骤5的hmdb51的上一层data路径添加到TCD项目的dataset_config.py文件的ROOT_DATASET变量上即可
-
-
-# 11-18 (目前需要跑11-18和11-17两日期的任务)
-bash scripts/11-18/8gpus_hmdb_1e-4_bsz88_hs100_1000.sh \
-bash scripts/11-18/8gpus_hmdb_1e-4_bsz88_hs100_1993.sh \
-bash scripts/11-18/8gpus_hmdb_1e-4_bsz88_hs100_2021.sh \
-bash scripts/11-18/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/11-18/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/11-18/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh \
-bash scripts/11-18/8gpus_sthv2_1e-4_bsz88_hs100_1000.sh \
-bash scripts/11-18/8gpus_sthv2_1e-4_bsz88_hs100_1993.sh \
-bash scripts/11-18/8gpus_sthv2_1e-4_bsz88_hs100_2021.sh
-
-# 11-17
-bash scripts/10-17/8gpus_hmdb_1e-4_bsz88_hs100_1000.sh \
-bash scripts/10-17/8gpus_hmdb_1e-4_bsz88_hs100_1993.sh \
-bash scripts/10-17/8gpus_hmdb_1e-4_bsz88_hs100_2021.sh 
-
-# 11-16
-bash scripts/10-16/8gpus_hmdb_1e-3_bsz88_hs100_1000.sh \
-bash scripts/10-16/8gpus_hmdb_1e-3_bsz88_hs100_1993.sh \
-bash scripts/10-16/8gpus_hmdb_1e-3_bsz88_hs100_2021.sh \
-bash scripts/10-16/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/10-16/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/10-16/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh
-
-# 11-15
-进入ddp_tcp文件夹 \
-运行 \
-bash scripts/10-15/8gpus_sthv2_2e-4_bsz88_hs100_1000.sh \
-bash scripts/10-15/8gpus_sthv2_2e-4_bsz88_hs100_1993.sh \
-bash scripts/10-15/8gpus_sthv2_2e-4_bsz88_hs100_2021.sh
-
-# 11-14
-进入ddp_tcp文件夹 \
-运行 \
-bash scripts/10-15/8gpus_hmdb_1e-3_bsz88_hs100_1000.sh \
-bash scripts/10-15/8gpus_hmdb_1e-3_bsz88_hs100_1000.sh \
-bash scripts/10-15/8gpus_hmdb_1e-3_bsz88_hs100_1993.sh \
-bash scripts/10-15/8gpus_hmdb_1e-3_bsz88_hs100_2021.sh \
-bash scripts/10-15/8gpus_hmdb_1e-4_bsz88_hs100_1000.sh \
-bash scripts/10-15/8gpus_hmdb_1e-4_bsz88_hs100_1993.sh \
-bash scripts/10-15/8gpus_hmdb_1e-4_bsz88_hs100_2021.sh \
-bash scripts/10-15/8gpus_hmdb_2e-4_bsz88_hs100_1000.sh \
-bash scripts/10-15/8gpus_hmdb_2e-4_bsz88_hs100_1993.sh \
-bash scripts/10-15/8gpus_hmdb_2e-4_bsz88_hs100_2021.sh 
-
-# 11-26 (UCF101超参数修改)
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_1000_nb2.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_1000_nb5.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_1000_nb10.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_1993_nb2.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_1993_nb5.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_1993_nb10.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_2021_nb2.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_2021_nb5.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_2021_nb10.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_2021_nb2_hslr1e-4.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_1000_nb2_hslr1e-2.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_1000_nb2_hslr1e-4.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_1993_nb2_hslr1e-2.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_1993_nb2_hslr1e-4.sh \
-bash scripts/11-26/8gpus_ucf_1e-3_bsz48_hs100_2021_nb2_hslr1e-2.sh
-
-# 11-24 (UCF101数据集任务)
-bash scripts/11-24/8gpus_hmdb_1e-3_bsz88_hs100_1000_nb5.sh \
-bash scripts/11-24/8gpus_hmdb_1e-3_bsz88_hs100_1000.sh \
-bash scripts/11-24/8gpus_hmdb_1e-3_bsz88_hs100_1993_nb5.sh \
-bash scripts/11-24/8gpus_hmdb_1e-3_bsz88_hs100_1993.sh \
-bash scripts/11-24/8gpus_hmdb_1e-3_bsz88_hs100_2021_nb5.sh \
-bash scripts/11-24/8gpus_hmdb_1e-3_bsz88_hs100_2021.sh \
-bash scripts/11-24/8gpus_ucf_1e-3_bsz88_hs100_1000_nb2.sh \
-bash scripts/11-24/8gpus_ucf_1e-3_bsz88_hs100_1000_nb5.sh \
-bash scripts/11-24/8gpus_ucf_1e-3_bsz88_hs100_1000_nb10.sh \
-bash scripts/11-24/8gpus_ucf_1e-3_bsz88_hs100_1993_nb2.sh \
-bash scripts/11-24/8gpus_ucf_1e-3_bsz88_hs100_1993_nb5.sh \
-bash scripts/11-24/8gpus_ucf_1e-3_bsz88_hs100_1993_nb10.sh \
-bash scripts/11-24/8gpus_ucf_1e-3_bsz88_hs100_2021_nb2.sh \
-bash scripts/11-24/8gpus_ucf_1e-3_bsz88_hs100_2021_nb5.sh \
-bash scripts/11-24/8gpus_ucf_1e-3_bsz88_hs100_2021_nb10.sh
-
-# 11-22 (hsnet网络小修改)
-bash scripts/11-22/8gpus_hmdb_1e-3_bsz88_hs100_1000_nb5.sh \
-bash scripts/11-22/8gpus_hmdb_1e-3_bsz88_hs100_1000.sh \
-bash scripts/11-22/8gpus_hmdb_1e-3_bsz88_hs100_1993.sh \
-bash scripts/11-22/8gpus_hmdb_1e-3_bsz88_hs100_1993_nb5.sh \
-bash scripts/11-22/8gpus_hmdb_1e-3_bsz88_hs100_2021_nb5.sh \
-bash scripts/11-22/8gpus_hmdb_1e-3_bsz88_hs100_2021.sh \
-先跑一下测试test.sh,能跑通age0和age1在跑后面三个sh \
-bash scripts/11-22/test.sh \
-bash scripts/11-22/8gpus_sthv2_1e-3_bsz88_hs100_1000.sh \
-bash scripts/11-22/8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
-bash scripts/11-22/8gpus_sthv2_1e-3_bsz88_hs100_2021.sh
+把步骤5的hmdb51的上一层data路径添加到incrementvideo-git\ops\dataset_config.py文件的ROOT_DATASET变量上即可
