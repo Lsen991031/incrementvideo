@@ -4,6 +4,19 @@ conda activate ls \
 conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch \
 pip install -r requirments
 
+# 2-16重要任务
+### （1）测试sh
+bash scripts/test/test_hmdb.sh \
+bash scripts/test/test_sthv2.sh \
+bash scripts/test/test_ucf101.sh
+
+### （2）ucf
+bash scripts/2-16/ucf/2/4gpus_UCF101_1e-3_bsz28_2021.sh \
+bash scripts/2-16/ucf/5/4gpus_UCF101_1e-3_bsz28_2021.sh \
+bash scripts/2-16/sthv2/10/4gpus_sthv2_1e-3_bsz28_2021.sh \
+bash scripts/2-16/hmdb/5/4gpus_hmdb_1e-3_bsz28_2021.sh
+
+
 # 2-16日任务(所有任务在incrementvideo-git目录下打开命令行)
 
 ### （1）测试sh

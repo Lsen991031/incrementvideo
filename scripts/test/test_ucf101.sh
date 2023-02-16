@@ -1,4 +1,4 @@
-CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 main.py \
+CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node=1 main.py \
         --arch resnet34 --num_segments 8 --seed 1993 \
         --gd 20 --lr 1e-3 --lr_steps 20 30 --epochs 1 --fine_tune_epochs 1 --training --testing \
         --train_batch-size 8 --test_batch-size 16 --exemplar_batch-size 64 -j 8 \
