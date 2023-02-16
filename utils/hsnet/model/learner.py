@@ -210,7 +210,7 @@ class HPNLearner(nn.Module):
             hypercorr_decoded2 = hypercorr_decoded2.view(8, 2048)
         # hypercorr_decoded1 = hypercorr_decoded1 * self.scaler
         # print("decoded1---------- is : {}".format(channel_fc))
-        hypercorr_decoded2 = hypercorr_decoded2 * self.scaler
+        # hypercorr_decoded2 = hypercorr_decoded2 * self.scaler
         # upsample_size = (hypercorr_decoded.size(-1) * 2,) * 2
         # hypercorr_decoded = F.interpolate(hypercorr_decoded, upsample_size, mode='bilinear', align_corners=True)
         # logit_mask = self.decoder2(hypercorr_decoded)

@@ -1,3 +1,34 @@
+# 2-16日任务
+bash scripts/test/test_hmdb.sh \
+bash scripts/test/test_sthv2.sh \
+bash scripts/test/test_ucf101.sh
+
+### ucf101数据集任务
+bash scripts/2-16/ucf/2/4gpus_UCF101_1e-3_bsz28_1000.sh \
+bash scripts/2-16/ucf/2/4gpus_UCF101_1e-3_bsz28_1993.sh \
+bash scripts/2-16/ucf/2/4gpus_UCF101_1e-3_bsz28_2021.sh \
+bash scripts/2-16/ucf/5/4gpus_UCF101_1e-3_bsz28_1000.sh \
+bash scripts/2-16/ucf/5/4gpus_UCF101_1e-3_bsz28_1993.sh \
+bash scripts/2-16/ucf/5/4gpus_UCF101_1e-3_bsz28_2021.sh \
+bash scripts/2-16/ucf/10/4gpus_UCF101_1e-3_bsz28_1000.sh \
+bash scripts/2-16/ucf/10/4gpus_UCF101_1e-3_bsz28_1993.sh \
+bash scripts/2-16/ucf/10/4gpus_UCF101_1e-3_bsz28_2021.sh 
+### HMDB51数据集任务
+bash scripts/2-16/hmdb/1/4gpus_hmdb_1e-3_bsz28_1000.sh \
+bash scripts/2-16/hmdb/1/4gpus_hmdb_1e-3_bsz28_1993.sh \
+bash scripts/2-16/hmdb/1/4gpus_hmdb_1e-3_bsz28_2021.sh \
+bash scripts/2-16/hmdb/5/4gpus_hmdb_1e-3_bsz28_1000.sh \
+bash scripts/2-16/hmdb/5/4gpus_hmdb_1e-3_bsz28_1993.sh \
+bash scripts/2-16/hmdb/5/4gpus_hmdb_1e-3_bsz28_2021.sh 
+### sthv2数据集任务
+bash scripts/2-16/sthv2/5/4gpus_sthv2_1e-3_bsz28_1000.sh \
+bash scripts/2-16/sthv2/5/4gpus_sthv2_1e-3_bsz28_1993.sh \ 
+bash scripts/2-16/sthv2/5/4gpus_sthv2_1e-3_bsz28_2021.sh \
+bash scripts/2-16/sthv2/10/4gpus_sthv2_1e-3_bsz28_1000.sh \
+bash scripts/2-16/sthv2/10/4gpus_sthv2_1e-3_bsz28_1993.sh \
+bash scripts/2-16/sthv2/10/4gpus_sthv2_1e-3_bsz28_2021.sh
+
+
 # 一、数据下载和处理（HMDB51）
 ## 1、下载mmaction2
 下面的链接是处理数据的开源仓库，利用该开源库下载和处理数据（将这个仓库放在数据存储的目录下，下载和处理的数据会生成在这个仓库的某文件夹下）
