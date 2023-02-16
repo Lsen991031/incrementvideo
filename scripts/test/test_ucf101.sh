@@ -11,4 +11,4 @@ CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node=1 main.py \
         --hs_lr 1e-3 \
         --modality RGB --scaler 100 \
         --workers 0 \
-        --exemplar_path ./checkpoint/ucf101/exemplar --num_per_class_list 51 --args.exemplar_iteration 1
+        --exemplar_path ./checkpoint/ucf101/exemplar --num_per_class_list 51 --exemplar_iteration 1

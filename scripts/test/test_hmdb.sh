@@ -12,4 +12,4 @@ CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node=1 --master_port 25961 main.py \
         --dataset hmdb51 \
         --modality RGB --scaler 100 \
         --workers 0 \
-        --exemplar_path ./checkpoint/hmdb51/exemplar --num_per_class_list 26 --args.exemplar_iteration 1
+        --exemplar_path ./checkpoint/hmdb51/exemplar --num_per_class_list 26 --exemplar_iteration 1
