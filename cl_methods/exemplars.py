@@ -136,7 +136,7 @@ def _reduce_exemplar_set(ex_list, memory_size):
 
     return reduced_list
 
-def compute_mask(args, model, exemplar_loader):
+def compute_mask(args, model, exemplar_loader, exemplar_path_local):
     with model.no_sync():
         '''DDP parameter'''
         rank = args.rank
@@ -177,16 +177,17 @@ def compute_mask(args, model, exemplar_loader):
             learnable_para = torch.ones([a[0], 3, 224, 224]) - 1
             learnable_para = learnable_para.cuda()
             learnable_para.requires_grad = True
-            optimizer = torch.optim.Adam([{'params': [weight], 'lr': 0.1}, {'params': [learnable_para], 'lr': 0.01}], amsgrad=True)
+            optimizer = torch.optim.Adam([{'params': [weight], 'lr': args.weight_lr}, 
+                                            {'params': [learnable_para], 'lr': args.learnable_para_lr}], amsgrad=True)
 
             lr = 0.1
             inputs_image = []
 
             time.sleep(0.01)
             if rank == 0:
-                tq_range = tqdm(range(1000))
+                tq_range = tqdm(range(args.exemplar_iteration))
             else:
-                tq_range = range(1000)
+                tq_range = range(args.exemplar_iteration)
             for i in tq_range:
             # for i in range(10000):
                 # optimizer = torch.optim.Adam([{'params': [weight], 'lr': 0.001}, {'params': [learnable_para], 'lr': lr}], amsgrad=True)
@@ -253,12 +254,13 @@ def compute_mask(args, model, exemplar_loader):
                     #     print("target is {}".format(target))
                     #     print("preds_f is {}".format(preds_f))
                     #     print("preds_fp is {}".format(preds_fp))
-                    wandb.log({"task_a/loss1": loss,
-                        "task_a/dist1": dist1,
-                        "task_a/dist2": dist2,
-                        "task_a/confidence1": confidence1,
-                        "task_a/confidence2": confidence2,
-                        })
+                    if args.wandb:
+                        wandb.log({"task_a/loss1": loss,
+                            "task_a/dist1": dist1,
+                            "task_a/dist2": dist2,
+                            "task_a/confidence1": confidence1,
+                            "task_a/confidence2": confidence2,
+                            })
                 if i % 5000 == 0:
                     lr = lr / 10.0
 
@@ -270,12 +272,12 @@ def compute_mask(args, model, exemplar_loader):
             # inputs_image = inputs_image.mean(-4)
             # inputs_image = inputs_image.view(a[0], 3, 224, 224)
 
-            if not os.path.exists(args.exemplar_path) and rank == 1:
-                # print('creating folder ' + args.exemplar_path)
-                os.mkdir(args.exemplar_path)
+            # if not os.path.exists(args.exemplar_path) and rank == 0:
+            #     # print('creating folder ' + args.exemplar_path)
+            #     os.mkdir(args.exemplar_path)
 
             for j in range(a[0]):
-                filename = os.path.join(args.exemplar_path, props[0][j] , 'img.pth')
+                filename = os.path.join(exemplar_path_local, props[0][j] , 'img.pth')
                 # print(filename)
                 torch.save(inputs_image[j].data, filename)
 
@@ -365,20 +367,28 @@ def manage_exemplar_set(args, age, current_task, current_head, class_indexer, pr
 
     current_task_exemplar = _construct_exemplar_set(train_loader_for_exemplar,model,current_task,class_indexer,exemplar_per_class,args)
 
+    exemplar_path_local = os.path.join(args.exemplar_path, str(args.nb_class), str(args.seed))
     if rank == 0:
         if not os.path.exists(args.exemplar_path):
-            print('creating folder ' + args.exemplar_path)
+            print('creating folder ' + os.path.join(args.exemplar_path))
             os.mkdir(args.exemplar_path)
+        if not os.path.exists(os.path.join(args.exemplar_path, str(args.nb_class))):
+            print('creating folder ' + os.path.join(args.exemplar_path, str(args.nb_class)))
+            os.mkdir(os.path.join(args.exemplar_path, str(args.nb_class)))
+        if not os.path.exists(os.path.join(args.exemplar_path, str(args.nb_class), str(args.seed))):
+            print('creating folder ' + os.path.join(args.exemplar_path, str(args.nb_class), str(args.seed)))
+            os.mkdir(os.path.join(args.exemplar_path, str(args.nb_class), str(args.seed)))
+        
         for ex_i in current_task_exemplar:
             # print(len(current_task_exemplar))
             # print(current_task_exemplar)
             # print(list(ex_i.keys()))
             for key_file in list(ex_i.keys()):
                 a = key_file.split('/')
-                if not os.path.exists(os.path.join(args.exemplar_path, a[0])):
-                    os.mkdir(os.path.join(args.exemplar_path, a[0]))
-                if not os.path.exists(os.path.join(args.exemplar_path, key_file)):    
-                    os.mkdir(os.path.join(args.exemplar_path, key_file))
+                if not os.path.exists(os.path.join(exemplar_path_local, a[0])):
+                    os.mkdir(os.path.join(exemplar_path_local, a[0]))
+                if not os.path.exists(os.path.join(exemplar_path_local, key_file)):    
+                    os.mkdir(os.path.join(exemplar_path_local, key_file))
     dist.barrier()
 
     # Construct Exemplar Set for the Current Task
@@ -404,7 +414,7 @@ def manage_exemplar_set(args, age, current_task, current_head, class_indexer, pr
                         shuffle=False, num_workers=args.workers,
                         pin_memory=True, drop_last=False)
     
-    ppp = compute_mask(args, model, train_loader_for_cur_exemplar)
+    ppp = compute_mask(args, model, train_loader_for_cur_exemplar, exemplar_path_local)
 
     if age > 0:
         # Reduce Exemplar Set
@@ -418,7 +428,7 @@ def manage_exemplar_set(args, age, current_task, current_head, class_indexer, pr
     torch.cuda.empty_cache() # ?????????????????????????
 
     exemplar_dict[age] = exemplar_list
-    print(exemplar_list)
+    # print(exemplar_list)
     if rank == 0:
         save_exemplars(args, exemplar_dict)
     dist.barrier()

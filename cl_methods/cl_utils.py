@@ -203,14 +203,34 @@ def compute_final_stats(n_videos, args, cls='cnn'):
     # print("最终准确率为：{}".format(final_top1))
 
     top1 = np.concatenate((final_top1,fgt_top1,avg_top1_tot))
+    # if rank == 0:
+    #     output = ('lr: {lr:.5f}\t'
+    #             'seed: {seed}\t'
+    #             'scaler: {scaler}\t'
+    #             'dataset: {dataset}\t'
+    #             'nb_class: {nb_class}').format(
+    #         seed=args.seed, lr=args.lr, batch=args.train_batch_size,
+    #         scaler=args.scaler, dataset=args.dataset, nb_class=args.nb_class)
+    #     print(output)
+    #     print("{}的".format(cls))
+    #     print("最终准确率为:{}".format(top1))
     if rank == 0:
         output = ('lr: {lr:.5f}\t'
                 'seed: {seed}\t'
                 'scaler: {scaler}\t'
                 'dataset: {dataset}\t'
-                'nb_class: {nb_class}').format(
+                'nb_class: {nb_class}\t'
+                'hs_lr: {hs_lr}\t'
+                'lambda_0: {lambda_0}\t'
+                'lambda_1: {lambda_1}\t'
+                'lambda_2: {lambda_2}\t'
+                'use_importance: {use_importance}\t'
+                'K: {K}\t'
+                ).format(
             seed=args.seed, lr=args.lr, batch=args.train_batch_size,
-            scaler=args.scaler, dataset=args.dataset, nb_class=args.nb_class)
+            scaler=args.scaler, dataset=args.dataset, nb_class=args.nb_class, 
+            hs_lr=args.hs_lr, lambda_0=args.lambda_0, lambda_1=args.lambda_1, lambda_2=args.lambda_2, 
+            use_importance=args.use_importance, K=args.K)
         print(output)
         print("{}的".format(cls))
         print("最终准确率为:{}".format(top1))

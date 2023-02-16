@@ -63,7 +63,9 @@ def main():
     current_head = 0
     end_task = min(args.end_task, args.num_task)
 
-    num_per_class = np.arange(51)
+    num_per_class = np.arange(args.num_per_class_list)
+    # if age > 0:
+    #     num_per_class = np.arange(args.num_per_class_list + (age-1)*args.nb_class)
     num_per_class = [40 for i in range(len(num_per_class))]
     print(num_per_class)
 

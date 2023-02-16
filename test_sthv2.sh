@@ -7,6 +7,9 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --nproc_per_node=8 main.py \
         --cl_type DIST --cl_method OURS --init_task 26 --nb_class 1 --K 5 \
         --lambda_0 1e-2 --lambda_0_type geo --budget_type class --lambda_1 1.0 \
         --eta_learnable --sigma_learnable --fc lsc --num_proxy 1 \
-        --use_importance --t_div --lambda_2 1e-3 --cbf \
+        --t_div --lambda_2 1e-3 --cbf \
+        --hs_lr 1e-3 \
         --dataset somethingv2 \
         --modality RGB --scaler 100
+        --workers 0 \
+        --exemplar_path ./checkpoint/somethingv2/exemplar --num_per_class_list 84 --args.exemplar_iteration 1

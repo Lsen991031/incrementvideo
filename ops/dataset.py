@@ -324,7 +324,7 @@ class TSNDataSet(data.Dataset):
         if(record._is_exemplar and self.is_img_end):
             filename = os.path.join("/home/ls/hsnet/checkpoint/hmdb51/exemplar", record.path , 'img.pth')
             img_end = torch.load(filename)
-            print(img_end.shape)
+            # print(img_end.shape)
             # img_end = img_end.repeat(8,1,1).cpu()
             # print(img_end.shape)
             return img_end, self.class_indexer[record.label], [record.path, record.num_frames, indices.astype(int)]

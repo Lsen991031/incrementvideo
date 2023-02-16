@@ -112,8 +112,8 @@ class HPNLearner(nn.Module):
                         nn.BatchNorm2d(och2, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, device=None, dtype=None),
                         nn.ReLU())
 
-        self.fc = nn.Linear(512 * 7 * 7 , 512)
-        self.softmax = nn.Softmax()
+        # self.fc = nn.Linear(512 * 7 * 7 , 512)
+        # self.softmax = nn.Softmax()
 
         self.scaler = args.scaler
         self.dataset = args.dataset
