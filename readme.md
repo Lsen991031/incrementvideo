@@ -1,9 +1,17 @@
-# 2-16日任务
+# 环境配置
+conda create -n ls python=3.8 \
+conda activate ls \
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch \
+pip install -r requirments
+
+# 2-16日任务(所有任务在incrementvideo-git目录下打开命令行)
+
+### （1）测试sh
 bash scripts/test/test_hmdb.sh \
 bash scripts/test/test_sthv2.sh \
 bash scripts/test/test_ucf101.sh
 
-### ucf101数据集任务
+### （2）ucf101数据集任务
 bash scripts/2-16/ucf/2/4gpus_UCF101_1e-3_bsz28_1000.sh \
 bash scripts/2-16/ucf/2/4gpus_UCF101_1e-3_bsz28_1993.sh \
 bash scripts/2-16/ucf/2/4gpus_UCF101_1e-3_bsz28_2021.sh \
@@ -13,16 +21,16 @@ bash scripts/2-16/ucf/5/4gpus_UCF101_1e-3_bsz28_2021.sh \
 bash scripts/2-16/ucf/10/4gpus_UCF101_1e-3_bsz28_1000.sh \
 bash scripts/2-16/ucf/10/4gpus_UCF101_1e-3_bsz28_1993.sh \
 bash scripts/2-16/ucf/10/4gpus_UCF101_1e-3_bsz28_2021.sh 
-### HMDB51数据集任务
+### （3）HMDB51数据集任务
 bash scripts/2-16/hmdb/1/4gpus_hmdb_1e-3_bsz28_1000.sh \
 bash scripts/2-16/hmdb/1/4gpus_hmdb_1e-3_bsz28_1993.sh \
 bash scripts/2-16/hmdb/1/4gpus_hmdb_1e-3_bsz28_2021.sh \
 bash scripts/2-16/hmdb/5/4gpus_hmdb_1e-3_bsz28_1000.sh \
 bash scripts/2-16/hmdb/5/4gpus_hmdb_1e-3_bsz28_1993.sh \
 bash scripts/2-16/hmdb/5/4gpus_hmdb_1e-3_bsz28_2021.sh 
-### sthv2数据集任务
+### （4）sthv2数据集任务
 bash scripts/2-16/sthv2/5/4gpus_sthv2_1e-3_bsz28_1000.sh \
-bash scripts/2-16/sthv2/5/4gpus_sthv2_1e-3_bsz28_1993.sh \ 
+bash scripts/2-16/sthv2/5/4gpus_sthv2_1e-3_bsz28_1993.sh \
 bash scripts/2-16/sthv2/5/4gpus_sthv2_1e-3_bsz28_2021.sh \
 bash scripts/2-16/sthv2/10/4gpus_sthv2_1e-3_bsz28_1000.sh \
 bash scripts/2-16/sthv2/10/4gpus_sthv2_1e-3_bsz28_1993.sh \
