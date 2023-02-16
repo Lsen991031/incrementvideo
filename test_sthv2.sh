@@ -12,4 +12,4 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --nproc_per_node=8 main.py \
         --dataset somethingv2 \
         --modality RGB --scaler 100
         --workers 0 \
-        --exemplar_path ./checkpoint/somethingv2/exemplar --num_per_class_list 84 --args.exemplar_iteration 1
+        --exemplar_path ./checkpoint/somethingv2/exemplar --num_per_class_list 84 --exemplar_iteration 1

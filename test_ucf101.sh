@@ -11,7 +11,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --nproc_per_node=8 main.py \
         --hs_lr 1e-3 \
         --modality RGB --scaler 100 \
         --workers 0 \
-        --exemplar_path ./checkpoint/ucf101/exemplar --num_per_class_list 51 --args.exemplar_iteration 1
+        --exemplar_path ./checkpoint/ucf101/exemplar --num_per_class_list 51 --exemplar_iteration 1
 
 # CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --nproc_per_node=8 main.py \
 #         --arch resnet34 --num_segments 8 --seed 1993 \
