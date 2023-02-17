@@ -1,7 +1,7 @@
 CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node=1 --master_port 25961 main.py \
         --arch resnet50 --num_segments 8 --seed 1993 \
         --gd 20 --lr 2e-4 --lr_steps 20 30 --epochs 1 --fine_tune_epochs 1 --training --testing \
-        --train_batch-size 16 --test_batch-size 16 --exemplar_batch-size 32 -j 8 \
+        --train_batch-size 8 --test_batch-size 16 --exemplar_batch-size 16 -j 8 \
         --start_task 0 --exp 020701 --exemplar --nme \
         --test_crops 5 --loss_type nll --store_frames uniform \
         --cl_type DIST --cl_method OURS --init_task 26 --nb_class 5 --K 1 \
