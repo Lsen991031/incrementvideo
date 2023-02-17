@@ -1,0 +1,1 @@
+wget -O a.json https://oss.wkkc.vip/0ec68c3152974290/something-something-v2-labels.json\?Expires\=1676602657\&OSSAccessKeyId\=LTAI4G7RBQfqrZRNNqrLxfi9\&Signature\=F7uKz7B%2BgQjKWHOc34aXiRGHyJM%3D\&response-content-disposition\=attachment%3Bfilename%2A%3Dutf-8something-something-v2-labels.json
