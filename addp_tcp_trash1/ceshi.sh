@@ -8,7 +8,7 @@ CUDA_VISIBLE_DEVICES=0 torchrun --nproc_per_node=1 main.py \
         --lambda_0 1e-2 --lambda_0_type geo --budget_type class --lambda_1 1.0 \
         --eta_learnable --sigma_learnable --fc lsc --num_proxy 1 \
         --use_importance --t_div --lambda_2 1e-3 --cbf \
-        --dataset hmdb51 \
+        --dataset somethingv2 \
         --hs_lr 1e-4 \
         --scaler 100 \
         --modality RGB

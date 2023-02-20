@@ -4,7 +4,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 torchrun --nproc_per_node=8 main.py \
         --train_batch-size 2 --test_batch-size 2 --exemplar_batch-size 2 -j 8 \
         --start_task 0 --exp 1129000 --exemplar --nme \
         --test_crops 5 --loss_type nll --store_frames uniform \
-        --cl_type DIST --cl_method OURS --init_task 26 --nb_class 1 --K 5 \
+        --cl_type DIST --cl_method OURS --init_task 26 --nb_class 1 --K 20 \
         --lambda_0 1e-2 --lambda_0_type geo --budget_type class --lambda_1 1.0 \
         --eta_learnable --sigma_learnable --fc lsc --num_proxy 1 \
         --t_div --lambda_2 1e-3 --cbf \
