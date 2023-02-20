@@ -1,3 +1,18 @@
+# 2-20重要任务
+分别将addp_tcp_trash1和addp_tcp_trash2文件夹下面的ops/dataset_config.py的 \
+ROOT_DATASET = '/home/ls/mmaction2-old/data/'更换为存放数据的文件夹
+### （1）测试sh
+addp_tcp_trash1和addp_tcp_trash2文件夹分别是两个任务
+分别运行两个文件夹下的ceshi.sh
+
+### （2）对比试验
+addp_tcp_trash1文件夹下运行
+bash 8gpus_hmdb_1e-3_bsz88_hs100_1993_hslr1e-4.sh
+
+addp_tcp_trash2文件夹下运行
+8gpus_hmdb_1e-3_bsz88_hs100_1993_hslr1e-4_duibi.sh
+
+
 # 环境配置
 conda create -n ls python=3.8 \
 conda activate ls \
