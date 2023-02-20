@@ -127,7 +127,7 @@ def _train(args, train_loader, model, hs_model, criterion, optimizer, hs_optimiz
                 loss = lambda_0[0] * loss_ce + lambda_0[1] * loss_kd_logit
 
                 #del preds_old, feat_old, int_features_old
-                #del feat, int_features
+                #del feat, int_featuresji
             else:
                 loss_ce = criterion(preds, target_)
                 loss = loss_ce

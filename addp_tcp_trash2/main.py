@@ -54,7 +54,8 @@ def main():
     total_task_list = class_list_total.tolist()
 
     class_indexer = dict((i, n) for n, i in enumerate(total_task_list)) # convert shuffled classes into 0,1,2,....
-    utils.check_rootfolders(args)
+    if rank == 0:
+        utils.check_rootfolders(args)
 
     model_old = None
 

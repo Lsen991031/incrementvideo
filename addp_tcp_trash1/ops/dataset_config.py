@@ -5,7 +5,7 @@
 
 import os
 
-ROOT_DATASET = '/home/ls/mmaction2-old/data/'
+ROOT_DATASET = '/media/data/Lsen/mmaction2/data/'
 
 def return_ucf101():
     filename_categories = 'ucf101/annotations/classInd.txt'
