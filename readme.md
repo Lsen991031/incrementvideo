@@ -1,3 +1,7 @@
+# 重大进展
+addp_tcp_trash1文件夹下运行
+bash 8gpus_sthv2_1e-3_bsz88_hs100_1993.sh
+
 # 2-20重要任务
 分别将addp_tcp_trash1和addp_tcp_trash2文件夹下面的ops/dataset_config.py的 \
 ROOT_DATASET = '/home/ls/mmaction2-old/data/'更换为存放数据的文件夹
