@@ -124,7 +124,7 @@ def _train(args, train_loader, model, hs_model, criterion, optimizer, hs_optimiz
                 loss_kd_logit = cl_dist.lf_dist_tcd(feat,feat_old,factor=importance_list[-1] if importance_list else None)
                 loss_att = cl_dist.hs_feat_dist(int_features[-1], int_features_old[-1], args, hs_importance)
                 # loss_att = cl_dist.feat_dist(int_features,int_features_old,args,factor=importance_list[:-1] if importance_list else None)
-                loss = lambda_0[0] * loss_ce + args.lambda_1 * loss_att
+                loss = lambda_0[0] * loss_ce + lambda_0[1] * loss_kd_logit + args.lambda_1 * loss_att
 
                 #del preds_old, feat_old, int_features_old
                 #del feat, int_features
