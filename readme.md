@@ -1,6 +1,8 @@
 # 重大进展
 addp_tcp_trash1文件夹下运行
 bash 8gpus_sthv2_1e-3_bsz88_hs100_1993.sh
+bash 8gpus_sthv2_1e-3_bsz88_hs100_19938.sh
+bash 4gpus_sthv2_1e-3_bsz88_hs100_19935.sh
 
 # 2-20重要任务
 分别将addp_tcp_trash1和addp_tcp_trash2文件夹下面的ops/dataset_config.py的 \
