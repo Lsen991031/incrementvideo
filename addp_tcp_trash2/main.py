@@ -63,6 +63,9 @@ def main():
     current_head = 0
     end_task = min(args.end_task, args.num_task)
 
+    num_per_class = np.arange(84)
+    num_per_class = [5 for i in range(len(num_per_class))]
+
     for i in range(args.start_task, end_task):
         print('Method : {}'.format('FT' if args.cl_type=='FT' else args.cl_method))
         print("----AGE {}----".format(i))
@@ -73,7 +76,8 @@ def main():
 
         print("Phase 1 : Train Model in an Incremental Manner") 
         if args.training:
-            train_i_cl.train_task(args, i, current_task, current_head, class_indexer, prefix=prefix)
+            # train_i_cl.train_task(args, i, current_task, current_head, class_indexer, prefix=prefix)
+            num_per_class = train_i_cl.train_task(args, i, current_task, current_head, class_indexer, prefix=prefix, num_per_class=num_per_class)
         if args.exemplar:
             print("Phase 2 : Manage Exemplar Sets")
             exemplars.manage_exemplar_set(args, i, current_task, current_head, class_indexer, prefix=prefix)

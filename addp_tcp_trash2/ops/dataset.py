@@ -71,6 +71,9 @@ class TSNDataSet(data.Dataset):
         self.remove_missing = remove_missing
         self.dense_sample = dense_sample  # using dense sample as I3D
         self.twice_sample = twice_sample  # twice sample for more validation
+        
+        self.num_current_class = []
+
         if self.dense_sample:
             print('=> Using dense sample for the dataset...')
         if self.twice_sample:
@@ -129,6 +132,12 @@ class TSNDataSet(data.Dataset):
             tmp = [item for item in tmp if int(item[1]) >= 3]
         if not self.exemplar_only:
             self.video_list = [VideoRecord(item) for item in tmp if int(item[2]) in self.task_list] # Filter data list with the task list
+            
+            for i in range(len(self.task_list)):
+                v1 = [VideoRecord(item) for item in tmp if int(item[2]) is self.task_list[i]]
+                print(len(v1))
+                self.num_current_class.append(len(v1))
+            print(self.num_current_class)
 
             if self.image_tmpl == '{:06d}-{}_{:05d}.jpg':
                 for v in self.video_list:

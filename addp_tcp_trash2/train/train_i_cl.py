@@ -35,7 +35,7 @@ from utils.hsnet.model.hsnet import HypercorrSqueezeNetwork
 '''DDP'''
 import torch.distributed as dist 
 
-def _train(args, train_loader, model, hs_model, criterion, optimizer, hs_optimizer, epoch, age, lambda_0=[0.5,0.5], model_old=None, importance_list=None):
+def _train(args, train_loader, model, hs_model, criterion, optimizer, hs_optimizer, epoch, age, lambda_0=[0.5,0.5], model_old=None, importance_list=None, a=None):
     '''DDP parameter'''
     rank = args.rank
     device = torch.device(args.gpu)
@@ -70,6 +70,16 @@ def _train(args, train_loader, model, hs_model, criterion, optimizer, hs_optimiz
         model_old.eval()
 
     end = time.time()
+
+    label_freq=a.copy()
+    c = a.copy()
+    label_freq=[i/sum(label_freq) for i in label_freq]
+    # beta = 0.9999
+    # label_freq = np.array([(1 - beta**N) / (1 - beta) for N in label_freq])
+    a=[i+1e-8 for i in label_freq]
+    log_prior=np.log(a)
+    print("$$$$$$$$$$$$$$$$$$$$$$${}".format(log_prior))
+
     # train_bar = tqdm(train_loader, file=sys.stdout)
     for i, (input, target, _) in enumerate(train_loader):
         # measure data loading time
@@ -115,21 +125,21 @@ def _train(args, train_loader, model, hs_model, criterion, optimizer, hs_optimiz
                 preds_base = torch.sigmoid(preds_old)
 
                 if args.fc == 'lsc':
-                    loss_ce = cl_dist.nca_loss(preds, target_)
+                    loss_ce = cl_dist.nca_loss(preds+1.0*torch.from_numpy(log_prior).cuda(), target_)
                 else:
-                    loss_ce = criterion(preds, target_)
+                    loss_ce = criterion(preds+1.0*torch.from_numpy(log_prior).cuda(), target_)
 
                 hs_importance = hs_model(feats, feats_old)
 
                 loss_kd_logit = cl_dist.lf_dist_tcd(feat,feat_old,factor=importance_list[-1] if importance_list else None)
                 loss_att = cl_dist.hs_feat_dist(int_features[-1], int_features_old[-1], args, hs_importance)
-                # loss_att = cl_dist.feat_dist(int_features,int_features_old,args,factor=importance_list[:-1] if importance_list else None)
-                loss = lambda_0[0] * loss_ce + lambda_0[1] * loss_kd_logit
+                loss_att1 = cl_dist.feat_dist(int_features,int_features_old,args,factor=importance_list[:-1] if importance_list else None)
+                loss = lambda_0[0] * loss_ce + lambda_0[1] * loss_kd_logit + args.lambda_1 * loss_att + args.lambda_1 * loss_att1
 
                 #del preds_old, feat_old, int_features_old
                 #del feat, int_featuresji
             else:
-                loss_ce = criterion(preds, target_)
+                loss_ce = criterion(preds+1.0*torch.from_numpy(log_prior).cuda(), target_)
                 loss = loss_ce
         else:
             if args.fc == 'lsc':
@@ -244,7 +254,7 @@ def _validate(args, val_loader, model, criterion, age):
 
     return top1.avg
 
-def train_task(args, age, current_task, current_head, class_indexer, model_old=None, prefix=None):
+def train_task(args, age, current_task, current_head, class_indexer, model_old=None, prefix=None, num_per_class=None):
     '''DDP parameter'''
     rank = args.rank
     device = torch.device(args.gpu)
@@ -336,7 +346,20 @@ def train_task(args, age, current_task, current_head, class_indexer, model_old=N
                 exemplar_list=exemplar_list, is_entire=(args.store_frames=='entire'), #nb_val=args.nb_val,
                 exemplar_per_class=exemplar_per_class, current_head=current_head,
                 diverse_rate=args.diverse_rate, cl_method=args.cl_method, age=age)
-    
+
+    a = []
+    if age > 0:
+        a = np.arange(current_head)
+        a[:current_head-args.nb_class] = num_per_class
+        # a[:current_head-args.nb_class] = args.K
+        a[current_head-args.nb_class:current_head] = train_dataset.num_current_class
+        num_per_class = a
+    else:
+        a[:current_head] = train_dataset.num_current_class
+        print("&&&train_dataset.num_current_class&&&&&&&&&&&&&&&{}".format(train_dataset.num_current_class))
+        num_per_class = a
+    print("&&&&&&&&&&&&&&&&&&{}".format(num_per_class))
+
     '''Wrap dataset with distributed'''
     train_sampler = torch.utils.data.distributed.DistributedSampler(train_dataset)
 
@@ -420,7 +443,7 @@ def train_task(args, age, current_task, current_head, class_indexer, model_old=N
             print("Learning rate adjusted")
 
         _train(args, train_loader, model, hs_model, criterion, optimizer, hs_optimizer, epoch, age,
-                lambda_0=lambda_0, model_old=model_old, importance_list=importance_list)
+                lambda_0=lambda_0, model_old=model_old, importance_list=importance_list, a=a)
         if (epoch + 1) % args.eval_freq == 0 or epoch == args.epochs - 1:
             if args.fc in ['cc','lsc']:
                 if rank == 0:
@@ -444,7 +467,10 @@ def train_task(args, age, current_task, current_head, class_indexer, model_old=N
 
     torch.cuda.empty_cache()
     del model, hs_model
-
+    
+    a = [args.K for i in range(len(num_per_class))]
+    print(a)
+    return a
 
 def _adjust_learning_rate(args, optimizer, epoch, lr_type, lr_steps):
     """Sets the learning rate to the initial LR decayed by 10 every 30 epochs"""

@@ -1,3 +1,8 @@
+# 代码修改
+addp_tcp_trash2文件夹下运行
+bash a.sh \
+bash b.sh \
+
 # 2-23
 addp_tcp_trash1文件夹下运行
 bash a.sh \
