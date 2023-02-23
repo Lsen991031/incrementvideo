@@ -1,3 +1,8 @@
+# 2-23
+addp_tcp_trash1文件夹下运行
+bash a.sh \
+bash b.sh \
+
 # 重大进展
 addp_tcp_trash1文件夹下运行
 bash 8gpus_sthv2_1e-3_bsz88_hs100_1993.sh \
