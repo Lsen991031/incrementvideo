@@ -114,7 +114,7 @@ def nme(model,class_means,test_loader,args,test_mode=True):
 
             preds = _get_closest(class_means,feat,test_mode,num_crop,target)
 
-            prec1 = accuracy(args, preds.data.cuda(), target.cuda(), topk=(1,)) 
+            prec1 = accuracy(args, preds.data.cuda(), target.cuda(), topk=(1,))
 
             top1.update(prec1[0].item(), input.size(0))
 

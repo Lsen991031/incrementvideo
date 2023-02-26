@@ -1,0 +1,6 @@
+/checkpoint
+/log
+/wandb
+/__pycache__
+/.vscode
+**/__pycache__

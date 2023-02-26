@@ -1,7 +1,12 @@
-# 代码修改
+# 2-26实验
 addp_tcp_trash2文件夹下运行
-bash a.sh \
-bash b.sh \
+bash a1.sh \
+bash a2.sh \
+bash b1.sh \
+bash b2.sh \
+
+addp_tcp_trash3文件夹下运行
+bash duibishiyan.sh
 
 # 2-23
 addp_tcp_trash1文件夹下运行
