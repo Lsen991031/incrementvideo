@@ -381,7 +381,8 @@ def resnet34(pretrained=False, remove_last_relu=False, num_segments=8, **kwargs)
     """
     model = ResNet(BasicBlock, [3, 4, 6, 3], remove_last_relu, num_segments, **kwargs)
     if pretrained:
-        model.load_state_dict(model_zoo.load_url(model_urls['resnet34']), strict=False)
+        sd = torch.load('/media/data/Lsen/z垃圾版本3/archs/resnet34-333f7ec4.pth', map_location='cpu')
+        model.load_state_dict(sd, strict=False)
     return model
 
 
@@ -393,7 +394,8 @@ def resnet50(pretrained=False, remove_last_relu=False, num_segments=8, **kwargs)
     """
     model = ResNet(Bottleneck, [3, 4, 6, 3], remove_last_relu, num_segments, **kwargs)
     if pretrained:
-        model.load_state_dict(model_zoo.load_url(model_urls['resnet50']), strict=False)
+        sd = torch.load('/media/data/Lsen/z垃圾版本3/archs/resnet50-19c8e357.pth', map_location='cpu')
+        model.load_state_dict(sd, strict=False)
     return model
 
 
