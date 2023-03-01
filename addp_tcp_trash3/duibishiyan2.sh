@@ -5,7 +5,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 torchrun --nproc_per_node=4 main.py \
         --start_task 0 --exp 226001 --exemplar --nme \
         --test_crops 5 --loss_type nll --store_frames uniform \
         --cl_type DIST --cl_method OURS --init_task 84 --nb_class 10 --K 20 \
-        --lambda_0 1e-2 --lambda_0_type geo --budget_type class --lambda_1 10.0 \
+        --lambda_0 10.0 --lambda_0_type geo --budget_type class --lambda_1 0.5 \
         --eta_learnable --sigma_learnable --fc lsc --num_proxy 1 \
         --use_importance --t_div --lambda_2 1e-3 --cbf \
         --dataset somethingv2 \
