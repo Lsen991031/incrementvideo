@@ -1,3 +1,9 @@
+addp_tcp_trash2-2文件夹下运行
+bash c.sh
+bash c1.sh
+bash c2.sh
+bash c3.sh
+
 # 3-1实验
 addp_tcp_trash3文件夹下运行
 bash duibishiyan2.sh
